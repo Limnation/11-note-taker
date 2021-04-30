@@ -30,3 +30,10 @@ app.get(`/`, (req, res) => {
 app.get(`/notes`, (req, res) => {
   res.sendFile(path.join(__dirname, "./public/notes.html"));
 });
+
+// API JSON Routes
+app.get(`/api/notes`, (req, res) => {
+  res.json(db);
+});
+
+
