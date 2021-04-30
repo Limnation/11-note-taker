@@ -20,3 +20,13 @@ app.use(express.urlencoded({ extended: true }));
 // Servers static files from the public file structure
 app.use(express.static(`${__dirname}/public`));
 console.log(__dirname);
+
+// Routes
+// sends file index.html in the public directory to the root
+app.get(`/`, (req, res) => {
+  res.sendFile(path.join(__dirname, "./public/index.html"));
+});
+// sends file notes.html in the public directory to the /notes
+app.get(`/notes`, (req, res) => {
+  res.sendFile(path.join(__dirname, "./public/notes.html"));
+});
