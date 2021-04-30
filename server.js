@@ -40,3 +40,18 @@ app.get(`/api/notes`, (req, res) => {
 app.get(`*`, (req, res) => {
   res.sendFile(path.join(__dirname, "./public/index.html"));
 });
+
+// POST
+app.post(`/api/notes`, (req, res) => {
+  const apiNotes = req.body;
+  db.push(apiNotes);
+
+  // Writes to the json file
+  fs.writeFile(
+    path.join(__dirname, "./db/db.json"),
+    JSON.stringify(db),
+    (err) => (err ? console.log(err) : console.log("Success!"))
+  );
+
+  res.json(db);
+});
