@@ -14,5 +14,5 @@ var path = require("path");
 // Express App
 const app = express();
 
-// Port
-const PORT = 8080;
+// set the environment variable PORT to tell your web server what port to listen on or(||) use static port 3000
+const PORT = process.env.PORT || 3000;
