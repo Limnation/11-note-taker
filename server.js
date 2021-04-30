@@ -18,4 +18,5 @@ app.use(express.json());
 //  syntax allows for rich objects and arrays to be encoded into the URL-encoded format, allowing for a JSON-like experience with URL-encoded
 app.use(express.urlencoded({ extended: true }));
 // Servers static files from the public file structure
-app.use(express.static(__dirname + "/public"));
+app.use(express.static(`${__dirname}/public`));
+console.log(__dirname);
