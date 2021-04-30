@@ -36,4 +36,7 @@ app.get(`/api/notes`, (req, res) => {
   res.json(db);
 });
 
-
+// Homepage catch all,  in case they dont put a / or type in something random into the url
+app.get(`*`, (req, res) => {
+  res.sendFile(path.join(__dirname, "./public/index.html"));
+});
